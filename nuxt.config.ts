@@ -1,4 +1,4 @@
-
+import { fileURLToPath } from 'url';
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   // https://nuxt.com/docs/guide/directory-structure/pages
@@ -35,4 +35,8 @@ export default defineNuxtConfig({
   css: [
     '@/styles/pageStyles.scss',
   ],
+
+  alias: {
+    '@/': fileURLToPath(new URL('./', import.meta.url)),
+  },
 });
